@@ -64,6 +64,8 @@ public class LoginTest extends BaseTest {
         String actualText2 = VerifyText2.getText();
         String expectedText2 = "Email Address";
         Assert.assertEquals(expectedText,actualText); */
+        WebElement VerifyUsernameLogin = driver.findElement(By.xpath("//i[@class='fa fa-user']"));
+        VerifyUsernameLogin.getText();
 
         //9. Click 'Delete Account' button
         WebElement deleteClick = driver.findElement(By.xpath("//i[@class='fa fa-trash-o']"));
@@ -74,6 +76,8 @@ public class LoginTest extends BaseTest {
         String actualText4 = VerifyText4.getText();
         String expectedText4 = " Logout";
         Assert.assertEquals(expectedText,actualText);*/
+        WebElement VerifyAccountDelete = driver.findElement(By.xpath("//a[@href='/delete_account']"));
+        VerifyAccountDelete.getText();
 
     }
 
@@ -166,6 +170,8 @@ public class LoginTest extends BaseTest {
         String actualText2 = VerifyText2.getText();
         String expectedText2 = "Email Address";
         Assert.assertEquals(expectedText,actualText); */
+        WebElement VerifyUsername = driver.findElement(By.xpath("//i[@class='fa fa-user']"));
+        VerifyUsername.getText();
 
         //9. Click 'Logout' button
         WebElement Logoutclick = driver.findElement(By.xpath("//a[@href='/logout']"));
@@ -207,6 +213,8 @@ public class LoginTest extends BaseTest {
         String actualTextUser = VerifyNewUser.getText();
         String expectedTextUser = "New User Signup!";
         Assert.assertEquals(expectedTextUser,actualTextUser); */
+        WebElement VerifyNewUser = driver.findElement(By.xpath("//div[@class='signup-form']"));
+        VerifyNewUser.getText();
 
         //6. Enter name and already registered email address
 
@@ -288,20 +296,30 @@ public class LoginTest extends BaseTest {
         String expectedTextList = "ALL PRODUCTS LIST";
         Assert.assertEquals(expectedTextCase,actualTextCase);
         //7. Click on 'View Product' of first product
-       /* WebElement ViewProductClick = driver.findElement(By.xpath("//a[@href='/product_details/1']"));
-        ViewProductClick.click(); */
+        WebElement ViewProductClick = driver.findElement(By.xpath("//a[@href='/product_details/1']"));
+        ViewProductClick.click();
+        //WebElement ClickViewProduct = driver.findElement(By.xpath("//a[@href='/product_details/1']"));
+        //ClickViewProduct.click();
 
         //8. User is landed to product detail page
         /* WebElement detailPage = driver.findElement(By.xpath("//img[@class='newarrival']"));
         String actualTextPage = detailPage.getText();
         String expectedTextPage = "Blue Top";
         Assert.assertEquals(expectedTextPage,actualTextPage); */
+        WebElement detailPage = driver.findElement(By.xpath("//div[@class='col-sm-9 padding-right']"));
+        detailPage.getText();
 
         //9. Verify that detail detail is visible: product name, category, price, availability, condition, brand
-        /* WebElement AlldetailPage = driver.findElement(By.xpath("//div[@class='product-information']"));
-        String actualTextAllPage = AlldetailPage.getText();
-        String expectedTextAllPage = "product-information";
-        Assert.assertEquals(expectedTextAllPage,actualTextAllPage); */
+        WebElement VerifyProductName = driver.findElement(By.tagName("h2"));
+        VerifyProductName.getText();
+        WebElement VerifyCatagory = driver.findElement(By.tagName("p"));
+        VerifyCatagory.getText();
+        WebElement VerifyAvailability = driver.findElement(By.tagName("b"));
+        VerifyAvailability.getText();
+        WebElement VerifyCondition = driver.findElement(By.tagName("b"));
+        VerifyCondition.getText();
+        WebElement VerifyBrand = driver.findElement(By.tagName("b"));
+        VerifyBrand.getText();
     }
 
     @Test
